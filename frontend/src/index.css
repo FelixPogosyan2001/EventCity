@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding:0;
+  display:grid;
+  grid-template-rows:minmax(calc(100vh - 9rem),auto);
+}
+.footer {
+  height:4rem;
+  position:relative;
+  background:#290066;
+  text-align:center;
+  color:white;
+  min-height:4rem;
+  display:grid;
+  align-items:center;
+  font-family: sans-serif;
+}
