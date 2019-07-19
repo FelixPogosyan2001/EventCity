@@ -52,12 +52,16 @@ ul {
   min-height:70px;
   display:grid;
   align-items:center;
-  margin-bottom:50px !important;
-  border:2px solid #8533ff;
+  margin-bottom:20px !important;
+  border:1.5px solid rgba(98, 25, 214,0.6);
   margin:auto;
   padding-left:1em;
   grid-template-columns:1fr 1fr;
-  padding-right:10px
+  padding-right:10px;
+  border-radius:2px;
+}
+.event-items:hover {
+  box-shadow:2px 3px 5px rgba(98, 25, 214,0.5);
 }
 #invalidData {
   color:red;
@@ -74,11 +78,15 @@ ul {
   display:grid;
   align-items:center;
   margin-bottom:50px !important;
-  border:2px solid #8533ff;
+  border:1.5px solid rgba(81, 1, 209,0.6);
   margin:auto;
   padding-left:1em;
   grid-template-columns:1fr 1fr;
-  padding-right:10px
+  padding-right:10px;
+  border-radius:2px
+}
+.book-items:hover {
+  box-shadow:2px 3px 5px rgba(98, 25, 214,0.5);
 }
 .versionBtn {
   margin-right:2rem;
@@ -86,21 +94,26 @@ ul {
   height:35px;
   cursor:pointer;
   font-size:1rem;
-  background: #8533ff;
+  background: #5101d1;
   color:white;
   border:0px;
-  border-radius:20px;
+  border-radius:4px;
+  font-weight:550
 }
 .book-items div{
   text-align:end
 }
 #view-button {
   border:none;
-  background: #8533ff;
+  background: rgb(98, 25, 214);
   color:white;
-  height:40px;
-  width:100px;
-  cursor:pointer
+  height:32px;
+  width:120px;
+  cursor:pointer;
+  border-radius:4px;
+  font-family:sans-serif;
+  font-weight:600;
+  font-size:0.8em
 }
 .main_nav_items ul li button{
   border:0px;
@@ -112,7 +125,7 @@ ul {
 }
 .main_nav_items ul li button:hover{
   background: white;
-  color : #8533ff;
+  color : #5101d1;
   border-radius:3px;
 }
 .main_nav_items ul li a {
@@ -131,7 +144,8 @@ ul {
   right:0px;
   display:grid;
   grid-template-columns: 2.8fr 1fr;
-  background-color: #8533ff;
+  background-color: #5101d1;
+  z-index:2
 }
 .main_nav_items {
   align-self:center
@@ -144,9 +158,11 @@ ul {
   left:15px;
 }
 #owner {
-  color:#8533ff;
+  color:#5101d1;
   font-size:2em;
-  cursor:pointer
+  cursor:pointer;
+  position: relative;
+  right:38px
 }
 .form-control label{
   display:block;;
@@ -160,28 +176,26 @@ ul {
 .crEvent {
   width: 30rem;
   margin:auto;
-  border:2px solid #8533ff;
+  border:1.5px solid rgba(98, 25, 214,0.6);
   padding-left:40px;
   padding-right:40px;
   padding-bottom:20px;
-  text-align:center
+  text-align:center;
+  border-radius:3px
 }
 .crEvent p {
   font-size:1.5rem
 }
 .crEvent button {
-  background: none;
-  border:2px solid  #8533ff;
-  width:25%;
-  height:35px;
+  background:#5101d1;
+  width:28%;
+  height:30px;
   font-family:sans-serif;
   font-size:0.9em;
-}
-.crEvent button:hover{
-  border:none;
-  background: #8533ff;
+  cursor:pointer;
   color:white;
-  cursor:pointer
+  border:none;
+  border-radius:3px
 }
 .shadowBox {
   position:fixed;
@@ -221,14 +235,15 @@ ul {
 }
 .modal footer button{
   margin-right:8px;
-  background: #8533ff;
+  background: #5101d1;
   color:white;
   width:15%;
   height:25px;
   border:none;
   font-family:sans-serif;
   font-size:0.9em;
-  cursor:pointer
+  cursor:pointer;
+  border-radius:4px
 }
 .modal-body {
   text-align: left;
@@ -236,28 +251,30 @@ ul {
   padding:8px;
 }
 .modal-body #card {
-  background: rgba(224, 204, 255,0.6);
+  //background: rgba(81, 1, 209,0.9);
   border-radius:5px;
-  color: rgba(133, 51, 255,0.9);
+  //color: white;
   padding:3px 5px 3px 5px;
+  font-family:serif;
 }
 .modal-body #card p:last-child {
   opacity:0.8;
 }
 .modal-body #card h2 {
-  border-bottom:1px solid rgb(224, 204, 255)
+  border-bottom:1px solid rgb(224, 204, 255);
+  opacity:0.95
 }
 .modal-body form {
   text-align:center
 }
 #info_card{
-  width:32vw;
+  width:32.2vw;
   border-bottom:1px solid rgb(224, 204, 255);
   overflow: auto;
   padding-bottom:8px
 }
 .modal header {
-  background: #8533ff;
+  background: #5101d1;
   color:white;
   font-family:serif;
   font-size:2rem;
@@ -283,8 +300,11 @@ ul {
   margin-top:5vh;
 }
 #price {
-  color:siler;
-  font-size:1.2rem
+  color:#737373;
+  font-size:1.2rem;
+  font-weight:bold;
+  position: relative;
+  bottom: 5px;
 }
 .btn-signIn {
   margin-right:2rem;
@@ -293,10 +313,10 @@ ul {
   height:35px;
   cursor:pointer;
   font-size:1rem;
-  background: #8533ff;
+  background: #5101d1;
   color:white;
   border:0px;
-  border-radius:20px
+  border-radius:5px
 }
 .FsignIn .login {
   margin-bottom:30px
@@ -323,7 +343,7 @@ ul {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background:#8533ff;
+  background: #5101d1;
   margin: -3px 0 0 -3px;
 }
 .lds-roller div:nth-child(1) {
@@ -476,11 +496,7 @@ body {
     transition: all .6s
   }
   .crEvent button {
-    background: #8533ff;
-    width:35%;
-    height:35px;
-    color:white;
-    font-family:serif;
+    width:35%
   }
   .crEvent {
     margin:auto;
@@ -500,6 +516,12 @@ body {
   }
   .event-items div:first-child {
     border-right:2px solid #8533ff
+  }
+  .event-items div:last-child {
+    right:0px !important
+  }
+  #owner {
+    right:21px
   }
   .modal {
     width:70%;
@@ -542,7 +564,7 @@ body {
     top:17%
   }
   #info_card{
-    width:60vw;
+    width:60.2vw;
     border-bottom:1px solid rgb(224, 204, 255);
     overflow: auto;
     padding-bottom:8px

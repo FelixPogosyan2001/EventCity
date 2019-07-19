@@ -22,7 +22,7 @@ export class Events extends Component {
   static contextType = AuthContext;
 
   close = () => {
-    this.setState({creatingEv:false});
+    this.setState({creatingEv:false,alert:false});
     findDOMNode(document.body).style.overflow = 'visible'
   }
 
@@ -67,7 +67,7 @@ export class Events extends Component {
       const result = await response.json();
       this.setState((prevState) => {
         findDOMNode(document.body).style.overflow = 'visible'
-        return {events : [...prevState.events,result.data.createEvent],creatingEv:false}
+        return {events : [...prevState.events,result.data.createEvent],creatingEv:false,alert:false}
       });
     } catch (error) {
       this.setState({alert:'Invalid syntax'});
@@ -136,15 +136,15 @@ export class Events extends Component {
                   {this.state.alert !== false && <h2 style= {{color:'red'}}>{this.state.alert}</h2>}
                   <div className = 'form-control'>
                     <label htmlFor = 'title'>Title</label>
-                    <input ref = {this.title} type = 'text' id = 'title'/>
+                    <input onBlur = {this.blur} onFocus = {this.focus} ref = {this.title} type = 'text' id = 'title'/>
                   </div>
                   <div className = 'form-control'>
                     <label htmlFor = 'title'>Price</label>
-                    <input ref = {this.price} type = 'number' id = 'title'/>
+                    <input ref = {this.price} type = 'number' id = '$price'/>
                   </div>
                   <div className = 'form-control'>
                     <label htmlFor = 'title'>Date</label>
-                    <input ref = {this.date} type = 'datetime-local' id = 'title'/>
+                    <input ref = {this.date} type = 'datetime-local' id = 'date'/>
                   </div>
                   <div className = 'form-control'>
                     <label htmlFor = 'title'>Description</label>
@@ -155,7 +155,7 @@ export class Events extends Component {
           </React.Fragment>}
         <React.Fragment>
           <div className = 'crEvent'>
-            <p>Share your event</p>
+            <p>Share your Events!</p>
             <center><button onClick = {this.open_modal_window}>Create Event</button></center>
           </div>
           {this.state.loading ? <Spiner/> : events }

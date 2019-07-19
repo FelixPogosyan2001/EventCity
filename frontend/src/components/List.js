@@ -11,7 +11,8 @@ class List extends Component {
     title : this.props.data.title,
     description : this.props.data.description,
     price : this.props.data.price,
-    date : this.props.data.date
+    date : this.props.data.date,
+    text : 'Book'
   }
   static contextType = AuthContext;
 
@@ -89,8 +90,13 @@ class List extends Component {
   input_handler = (e) => {
     if (e.target.id == 'title') this.setState({title:e.target.value})
     else if (e.target.id == 'desc_modal')  this.setState({description:e.target.value})
-    else if (e.target.id == 'price') this.setState({price:e.target.value})
+    else if (e.target.id == '$price') this.setState({price:e.target.value})
     else if (e.target.id == 'date') this.setState({date:e.target.value})
+  }
+  componentDidMount() {
+    if (!this.context.token) {
+      this.setState({text:'Confirm',details:false})
+    }
   }
 
   render() {
@@ -104,7 +110,7 @@ class List extends Component {
             <React.Fragment>
               <div className = 'shadowBox'></div>
               <Modal
-                btnTextOne = 'Book'
+                btnTextOne = {this.state.text}
                 btnTextTwo = 'Cancel'
                 add = {this.handlerBook}
                 close = {this.close}
@@ -132,7 +138,7 @@ class List extends Component {
                   </div>
                   <div className = 'form-control'>
                     <label htmlFor = 'title'>Price</label>
-                    <input onChange = {this.input_handler}  value = {this.state.price} type = 'number' id = 'price'/>
+                    <input onChange = {this.input_handler}  value = {this.state.price} type = 'number' id = '$price'/>
                   </div>
                   <div className = 'form-control'>
                     <label htmlFor = 'title'>Date</label>
@@ -149,10 +155,10 @@ class List extends Component {
         }
         <li className = 'event-items'>
           <div>
-            <h2 style = {{color:'#4700b3'}}>{this.props.data.title}</h2>
+            <h2 style = {{color:'#5101d1',position:'relative',top:'5px'}}>{this.props.data.title}</h2>
             <p id = 'price'>${this.props.data.price} - {new Date(this.props.data.date).toLocaleDateString()}</p>
           </div>
-          <div style = {{'textAlign':'end'}}>
+          <div style = {{textAlign:'end',position:'relative',right:'35px'}}>
             {result}
           </div>
         </li>

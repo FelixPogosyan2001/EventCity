@@ -7,8 +7,8 @@ class BookingList extends Component {
         {
           this.props.bookings.map((book,i) => {
             return (
-              <li className = "book-items" key = {i}>
-                <h3>{book.event.title}-{new Date(book.createdAt).toLocaleDateString()}</h3>
+              <li className = "book-items" key = {i + Math.random()}>
+                <h3>{book.event.title} - {new Date(book.createdAt).toLocaleDateString()}</h3>
                 <div>
                   <button onClick = {() => {this.props.cancelBook(book._id)}} className = 'versionBtn'>Cancel</button>
                 </div>
