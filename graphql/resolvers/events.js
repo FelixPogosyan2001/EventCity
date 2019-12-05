@@ -22,7 +22,7 @@ module.exports = {
     let result = await event.save();
     createdEvent = transformToEvent(result._doc);
     try {
-      let user = await User.findById('5d24fe589dd58714d48b0ff7')
+      let user = await User.findById(userId)
       if (!user) throw new Error('Not found');
       user.createdEvents.push(event)
       await user.save();
